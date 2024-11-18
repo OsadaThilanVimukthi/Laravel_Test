@@ -61,18 +61,32 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
-        //
+        $tasks = Task::find($id);
+        return view(view: 'tasks.edit')->with('tasks', $tasks);        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-        //
+        $tasks = Task::find($id);
+        
+        // Get all input
+        $input = $request->all();
+        
+        // Handle boolean values for checkboxes (is_paid, is_completed)
+        $input['is_paid'] = $request->has('is_paid') ? 1 : 0;
+        $input['is_completed'] = $request->has('is_complete') ? 1 : 0;
+        
+        // Update the task with the input
+        $tasks->update($input);
+    
+        return redirect('tasks')->with('flash_message', 'Task Updated!');
     }
+    
 
     /**
      * Remove the specified resource from storage.
