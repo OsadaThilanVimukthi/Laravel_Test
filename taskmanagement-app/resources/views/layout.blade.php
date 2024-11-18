@@ -86,18 +86,18 @@
                 <li class="nav-item mb-1">
                     <a href="{{url('/students')}}">
                         <i class="fa-regular fa-user"></i>
-                        Students 
+                        Tasks 
                     </a>
                 </li>
 
-                <li class="nav-item mb-1">
+                {{-- <li class="nav-item mb-1">
                     <a href="{{url('/students')}}">
                         <i class="fa-regular fa-bookmark"></i>
                         Teacher 
                         
                     </a>
-                </li>
-                <li class="nav-item mb-1">
+                </li> --}}
+                {{-- <li class="nav-item mb-1">
                     <a href="#">
                         <i class="fa-regular fa-newspaper"></i>
                         Course
@@ -114,7 +114,7 @@
                         <i class="fa-solid fa-graduation-cap"></i>
                         Organizations
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="sidebar-item  nav-item mb-1">
                     <a href="#" 
@@ -177,8 +177,7 @@
                         <li class="breadcrumb-item">
                             <i class="fa-solid fa-house"></i>
                         </li>
-                        <li class="breadcrumb-item">Learning Content</li>
-                        <li class="breadcrumb-item">Next Page</li>
+
                     </ol>
                 </nav>
 

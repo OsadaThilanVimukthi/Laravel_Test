@@ -1,17 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Models\Task;
+use Illuminate\View\View;
+use Redirect;
+
 
 class TaskController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        //
+        $tasks = Task::all();
+        return view('tasks.index')->with('tasks', $tasks);        
     }
 
     /**
@@ -19,7 +25,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        return view('tasks.create');
     }
 
     /**
