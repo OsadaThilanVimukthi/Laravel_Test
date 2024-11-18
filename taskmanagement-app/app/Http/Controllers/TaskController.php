@@ -34,9 +34,9 @@ class TaskController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $input = $request->all();
-    
-        // Set the authenticated user's ID as the `user_id`
-        $input['user_id'] = auth()->id(); // Get the currently logged-in user's ID
+        //i did not implented the loging section
+        
+        $input['user_id'] = auth()->id(); 
     
         // Convert checkbox values to boolean
         $input['is_complete'] = $request->has('is_complete') ? 1 : 0;
@@ -54,7 +54,8 @@ class TaskController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $tasks = Task::find($id);
+        return view('tasks.show')->with('tasks', $tasks);
     }
 
     /**
