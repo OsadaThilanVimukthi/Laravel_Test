@@ -31,10 +31,23 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $input = $request->all();
+    
+        // Set the authenticated user's ID as the `user_id`
+        $input['user_id'] = auth()->id(); // Get the currently logged-in user's ID
+    
+        // Convert checkbox values to boolean
+        $input['is_complete'] = $request->has('is_complete') ? 1 : 0;
+        $input['is_paid'] = $request->has('is_paid') ? 1 : 0;
+    
+        Task::create($input);
+        return redirect('tasks')->with('flash_message', 'Task Added!');
     }
+    
+    
+    
 
     /**
      * Display the specified resource.

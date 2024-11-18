@@ -84,7 +84,7 @@
             </a><hr>
             <ul class="mynav nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-1">
-                    <a href="{{url('/students')}}">
+                    <a href="{{url('/tasks')}}">
                         <i class="fa-regular fa-user"></i>
                         Tasks 
                     </a>

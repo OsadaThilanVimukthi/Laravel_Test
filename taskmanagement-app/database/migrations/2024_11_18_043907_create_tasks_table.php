@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // Define the user_id column
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Add foreign key
+            $table->unsignedBigInteger('user_id')->nullable(); // Define the user_id column as nullable
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Add foreign key constraint
             $table->string('title');
-            $table->date('birth_date');
-            $table->enum('tableStatus', ['High', 'Medium', 'Low'])->default('High');
+            $table->text('description');
+            $table->date('due_date');
+            $table->enum('priority', ['High', 'Medium', 'Low'])->default('High');
+            $table->boolean('is_completed')->default(0);
             $table->boolean('is_paid')->default(0);
             $table->timestamps();
             $table->timestamp('file_created')->nullable();
