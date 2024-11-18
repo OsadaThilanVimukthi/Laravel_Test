@@ -72,7 +72,7 @@
 </head>
 
 <body>
-
+   
     <div class="container-fluid p-0 d-flex h-100">
         <div id="bdSidebar" 
              class="d-flex flex-column 
@@ -82,6 +82,7 @@
             <a href="#" 
                class="navbar-brand">
             </a><hr>
+            <p>Dashboard</p>
             <ul class="mynav nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-1">
                     <a href="{{url('/tasks')}}">
@@ -90,31 +91,6 @@
                     </a>
                 </li>
 
-                {{-- <li class="nav-item mb-1">
-                    <a href="{{url('/students')}}">
-                        <i class="fa-regular fa-bookmark"></i>
-                        Teacher 
-                        
-                    </a>
-                </li> --}}
-                {{-- <li class="nav-item mb-1">
-                    <a href="#">
-                        <i class="fa-regular fa-newspaper"></i>
-                        Course
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="#">
-                        <i class="fa-solid fa-archway"></i>
-                        Institutions
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="#">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        Organizations
-                    </a>
-                </li> --}}
 
                 <li class="sidebar-item  nav-item mb-1">
                     <a href="#" 
