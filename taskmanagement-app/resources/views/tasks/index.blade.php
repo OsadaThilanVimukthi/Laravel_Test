@@ -16,7 +16,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        {{-- <th>User ID</th> --}}
+                                        <th>User ID</th>
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Due Date</th>
@@ -32,7 +32,7 @@
                                 @foreach($tasks as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        {{-- <td>{{ $item->user_id }}</td> --}}
+                                        <td>{{ $item->user_id }}</td>
                                         <td>{{ $item->title }}</td>
                                         <td>{{ $item->description }}</td>
                                         <td>{{ $item->due_date }}</td>
